@@ -1,4 +1,5 @@
-from dbconfig import db
+from db.dbconfig import db
+
 
 def bookAppointment(doctor):
     db.insert('appointment', {
@@ -7,19 +8,20 @@ def bookAppointment(doctor):
         'accepted_by': doctor
     })
 
+
 def showPatientMenu():
     print("1. See list of doctors")
     print("2. Show confirmed appointments")
     choice = int(input("Enter your choice :"))
     if choice == 1:
-        rows = db.getAll('user', '*', 
-        ('ut_id = %s', [2])
-        )
+        rows = db.getAll('user', '*',
+                         ('ut_id = %s', [2])
+                        )
         for row in rows:
             print(row)
 
         chooseDoctor = int(input("Choose the doctor"))
         bookAppointment(chooseDoctor)
 
-
-showPatientMenu()
+if __name__ == '__main__':
+    showPatientMenu()

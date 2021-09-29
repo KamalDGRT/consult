@@ -1,4 +1,4 @@
-from  db.db import Database
+from  .db import Database
 
 db = Database(
     host='localhost',
@@ -7,5 +7,3 @@ db = Database(
     database='consult',
     autocommit=True
 )
-
-print(db.config)

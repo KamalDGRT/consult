@@ -29,9 +29,9 @@ class Database:
         columns = [key for key in info.keys()]
         values = [info[column] for column in columns]
         sqlQuery = 'INSERT INTO ' + table + ' '
-        sqlQuery += "( " + str(columns).replace("'", "") + ") "
-        sqlQuery += ' VALUES (' + str(values) + ");"
-        sqlQuery = sqlQuery.replace('[', '').replace(']', '')
+        sqlQuery += str(columns).replace("'", "")
+        sqlQuery += ' VALUES ' + str(values) + ";"
+        sqlQuery = sqlQuery.replace('[', '(').replace(']', ')')
         return self.query(sqlQuery)
 
     def select(self, table=None, fields=None, where=None):
