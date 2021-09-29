@@ -1,0 +1,55 @@
+Inner Join = A intersection B
+Left Join
+
+Right Join
+
+Full Join
+
+query1
+UNION
+query2
+
+employee
+
+|eid| name  |
+| 1 | Abhi  |
+| 2 | Sona  |
+| 3 | Kamal |
+
+
+| 1 | Abhi  |
+| 3 | Kamal |
+
+SELECT DISTINCT(id), name
+FROM employee
+WHERE eid = (
+    
+)
+ORDER BY eid, name;
+
+sub query
+collated subquery
+
+
+
+project
+
+|pid| p_eid | project_name |
+| 1 | 2     | Consultancy |
+| 2 | 1     | ADeWeb Dev     |
+| 3 | 4     | App Dev     |
+
+
+SELECT pid, project_name
+FROM project
+WHERE project_name LIKE "?De%;
+
+
+SELECT employee.eid, employee.name, project.project_name
+FROM employee
+INNER JOIN project
+ON employee.eid = project.p_eid;
+
+
+
+Left Join
